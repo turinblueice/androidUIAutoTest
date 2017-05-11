@@ -95,7 +95,7 @@ ENV/
 *.iws
 
 #  project:
-
+outputs/
 .idea
 res/*
 
