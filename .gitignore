@@ -95,8 +95,7 @@ ENV/
 *.iws
 
 #  project:
-outputs/screen_shots/*
-outputs/logs/*
+outputs/
 
 .idea
 res/*
