@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试用例选择页</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
+    <script type="text/javascript" charset="utf-8" src="{{url_for('static', filename='select_case.js')}}"></script>
+</head>
+<body>
+
+<form action="/submit/" method="post">
+    {% for case in cases%}
+    <p class="parent"><input type="checkbox" class="option-input" name={{case}} value={{case}} onclick="allSelect('{{case}}', '{{case}}_item')">{{case}}</p>
+    <ul>
+        {% for function in cases[case] %}
+            <p><input type="checkbox" class='{{case}}_item option-input' name="case" value="{{case}}.{{function}}" onclick="singleSelect2parent('{{case}}', '{{case}}_item')">{{function}}</p>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    <p><input id="btnOperate" type="submit" value="选择" /></p>
+</form>
+</body>
+</html>
